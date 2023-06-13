@@ -12,6 +12,9 @@ module.exports = () => {
         keepAlive: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        writeConcern: {
+          w: 'majority'
+        }
       },
       (err) => {
         let dbStatus = "";
