@@ -9,18 +9,18 @@ const path=require('path')
 const app = express();
 app.use(cors({
   origin: 'https://mk-products-testsite.web.app',
-  methods: 'GET,POST',
+  methods: 'GET,POST,PATCH',
   allowedHeaders: 'Content-Type,Authorization',}
 ));
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', 'https://mk-products-testsite.web.app');
-//   // Or to allow requests from all origins:
-//   // res.header('Access-Control-Allow-Origin', '*');
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://mk-products-testsite.web.app');
+  // Or to allow requests from all origins:
+  // res.header('Access-Control-Allow-Origin', '*');
 
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json({ type: 'application/*+json' }));
