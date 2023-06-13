@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json({ type: 'application/*+json' }));
 app.use(require("./app/routes/index"));
-
+app.engine('ejs', require('ejs').renderFile)
+// app.set('view engine', 'html')
+app.set('view engine', 'ejs');
 app.listen(port, () => {
   console.log("done connect");
   console.log("http://localhost:" + port);
