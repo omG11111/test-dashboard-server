@@ -11,6 +11,7 @@ fs.readdirSync(routerPath).filter((file) => {
 
 router.get("/", (req, res) => {
   res.render("index");
+  // res.json({aaf:"asfafax"});
 });
 
 router.use("*", (req, res) => {
