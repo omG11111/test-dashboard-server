@@ -14,11 +14,11 @@ app.use(cors({
 ));
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://mk-products-testsite.web.app');
+  // res.header('Access-Control-Allow-Origin', 'https://mk-products-testsite.web.app');
   // Or to allow requests from all origins:
-  // res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', '*');
 
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Headers', 'Origin,Authorization, X-Requested-With, Content-Type, Accept');
   next();
 });
 app.use(bodyParser.json());
