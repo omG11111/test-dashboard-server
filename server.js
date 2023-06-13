@@ -7,11 +7,12 @@ const initMongo = require("./config/mongo");
 const path=require('path')
 
 const app = express();
-app.use(cors({
-  origin: 'https://mk-products-testsite.web.app',
-  methods: 'GET,POST,PATCH',
-  allowedHeaders: 'Content-Type,Authorization',}
-));
+app.use(cors());
+// app.use(cors({
+//   origin: 'https://mk-products-testsite.web.app',
+//   methods: 'GET,POST,PATCH',
+//   allowedHeaders: 'Content-Type,Authorization',}
+// ));
 
 app.use((req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'https://mk-products-testsite.web.app');
